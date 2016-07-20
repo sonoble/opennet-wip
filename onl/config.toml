@@ -60,14 +60,19 @@ googleAnalytics = ""
 	weight = 20
 
 [[menu.main]]
+        name   = "Blog"
+        url    = "blog/"
+        weight = 30
+
+[[menu.main]]
 	name   = "Wedge"
 	url    = "wedge/"
-	weight = 30
+	weight = 40
 
 [[menu.main]]
 	name   = "License"
 	url    = "license/"
-	weight = 40
+	weight = 50
 
 
 [blackfriday]

@@ -1,4 +1,8 @@
-# Frequently Asked Questions
+---
+date: 2016-07-19T00:11:02+01:00
+title: Open Network Linux - Frequently Asked Questions
+weight: 20
+---
 
 ## What are "Bare Metal Switches"?
 Bare Metal refers to the switches where the software and hardware are sold separately, that is, you can buy just the "bare metal". In other words, the end-user is free to load an operating system of their choice. ONL is an open source distribution of Linux for Bare Metal switches. 

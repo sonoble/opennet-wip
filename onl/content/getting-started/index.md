@@ -1,6 +1,6 @@
 ---
 date: 2016-07-19T00:11:02+01:00
-title: Getting started
+title: Open Network Linux - Getting started
 weight: 10
 ---
 Getting Started
@@ -150,53 +150,23 @@ Also, you can use install via scp with two steps,
        example: ONIE:/ # scp [username]@buildmachineIPAddress:/path/to/directory/onl-09b7bba-powerpc-all.2016.02.05.05.17.installer  ONL.installer # update for specific file/date/build
                 ONIE:/ # sh ONL.installer
 
-ONL NFS Root Directory
+ONL rc.boot and persistant storage
 ------------------------------------------------
 
 Given that the default installation of ONL does not persist files across
 reboots (this is intentional -- flash disks should not be written to
 as often as spinning disks), it is sometimes useful to have a normally
-writable, larger disk available for the switch.  Enter the NFS root
-directory which enables a switch to boot ONL from a remote NFS partition.
-While it is possible to simply fetch the SWI file from an NFS server
-(keeping the same non-persisted behavior), the much more useful feature
-is to have the root file system NFS hosted.
+writable, larger disk available for the switch. For this ONL has the concept
+of the /mnt/onl/data directory and the ability to use rc.boot scripts.
 
-To enable NFS mounted root partition:
+To persist and setup programs:
 
 1) Run the ONL installer normally (e.g., via the manual mode per above) so that the ONL loader is installed.
 
-2) Edit /mnt/flash/boot-config, enable DHCP, and change the SWI variable to point to a URL of the form "nfs://$ip[:port]/path/to/directory/".  For example, on my machine, this looks like:
+2) Edit /mnt/onl/data/rc.boot and insert the necessary commands
 
-     # cat /mnt/flash/boot-config
-     SWI=nfs://10.6.0.4/home/robs/export/ly2-1/  # trailing '/' is critical
-     NETAUTO=dhcp                                # optional, but likely what you want
-     NETDEV=ma1                                  # leave untouched
+     # cat /mnt/onl/data/rc.boot
+     #!/bin/sh
+     dpkg -i /mnt/onl/data/package.deb
 
-3) On server $ip, in /path/to/directory, unzip a target .SWI file, e.g.,
-
-     # wget http://opennetlinux.org/binaries/latest.swi
-     # unzip latest.swi
-
-4) unsquash the compressed root file system as directory 'rootfs-$arch':
-
-     # unsquashfs -d rootfs-$arch rootfs-$arch.sqsh  # e.g., $arch = 'powerpc'h
-
-Now reboot your switch and it should boot automatically into the NFS root file system.
-Note that the SWI structure is still maintained:
-
-     robs@sbs3:~/export/ly2-1$ ls -l
-     total 109048
-     -rw-r--r--  1 robs __USERS__   3382017 Nov  4 22:28 initrd-powerpc
-     -rwxr-xr-x  1 robs __USERS__   6942960 Nov  4 22:28 kernel-85xx*
-     -rw-r--r--  1 robs __USERS__ 101322752 Nov  4 22:28 rootfs-powerpc.sqsh
-     drwxrwxr-x 22 robs __USERS__      4096 Jan  2 18:21 rootfs-powerpc/
-     -rw-r--r--  1 robs __USERS__       100 Nov  4 22:29 version
-
-That is:
-* 'kernel-85xx' is the kernel image
-* 'initrd-powerpc' is the initial RAM disk image
-* 'rootfs-powerpc' is the base of the root filesystem
-* 'version' is a string that identifies this SWI
-
-Note: If NFS root squash is set on the server, you might get a permission error while booting. To fix this, you can set 'no_disable_squash' in /etc/exports. How ever, be aware of the security implications as root on a client machine will now have the same access privilege on the files as root on the NFS server.
+3) reboot and confirm that commands are executing correctly:

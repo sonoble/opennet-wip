@@ -1,9 +1,8 @@
 ---
 date: 2016-07-19T00:11:02+01:00
-title: Getting Started With The Wedge
-weight: 10
+title: Open Network Linux - Getting Started With The Wedge
+weight: 40
 ---
-# Facebook Wedge Support
 
 - ONL Supports the [[Wedge 40](http://www.edge-core.com/productsInfo.php?cls=1&cls2=7&cls3=57&id=110)] running the Facebook [[FBOSS](https://github.com/facebook/fboss)] fowarding agent and [[Snaproute](http://www.snaproute.com/)].
 - ONL Supports the Wedge 100 running [[Snaproute](http://www.snaproute.com/)].
