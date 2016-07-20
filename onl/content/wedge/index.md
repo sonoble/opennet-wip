@@ -1,7 +1,7 @@
 ---
 date: 2016-07-19T00:11:02+01:00
 title: Open Network Linux - Getting Started With The Wedge
-weight: 40
+weight: 60
 ---
 
 - ONL Supports the [[Wedge 40](http://www.edge-core.com/productsInfo.php?cls=1&cls2=7&cls3=57&id=110)] running the Facebook [[FBOSS](https://github.com/facebook/fboss)] fowarding agent and [[Snaproute](http://www.snaproute.com/)].
@@ -19,9 +19,12 @@ weight: 40
 
 ## Video Tutorials
 
-1. Installing ONIE   
-[Installing ONIE on the Wedge](http://vimeo.com/146086436). 
-2. Installing ONL   
-[Installing ONL on the Wedge](http://vimeo.com/146086486). 
-3. Running FBOSS   
-[Running FBOSS on the Wedge](http://vimeo.com/146086434).
+1. Installing ONIE
+<br>
+<iframe src="//player.vimeo.com/video/146086436" width="500" height="281" frame border="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p>.
+2. Installing ONL
+<br>
+<iframe src="//player.vimeo.com/video/146086486" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe><p>.
+3. Running FBOSS
+<br>
+<iframe src="//player.vimeo.com/video/146086434" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>

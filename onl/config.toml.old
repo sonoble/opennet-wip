@@ -1,6 +1,0 @@
-baseurl = "http://ocp.opennetlinux.org/"
-languageCode = "en-us"
-title = "Open Network Linux"
-
-[Params]
-  Author = "Steven Noble"

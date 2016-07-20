@@ -50,29 +50,39 @@ googleAnalytics = ""
 	weight = 0
 
 [[menu.main]]
+        name   = "Download Binaries"
+        url    = "http://opennetlinux.org/binaries/"
+        weight = 10
+
+[[menu.main]]
 	name   = "Getting started"
 	url    = "getting-started/"
-	weight = 10
+	weight = 20
 
 [[menu.main]]
 	name   = "FAQ"
 	url    = "faq/"
-	weight = 20
+	weight = 30
+
+[[menu.main]]
+        name   = "Community"
+        url    = "community/"
+        weight = 40
 
 [[menu.main]]
         name   = "Blog"
         url    = "blog/"
-        weight = 30
+        weight = 50
 
 [[menu.main]]
 	name   = "Wedge"
 	url    = "wedge/"
-	weight = 40
+	weight = 60
 
 [[menu.main]]
 	name   = "License"
 	url    = "license/"
-	weight = 50
+	weight = 70
 
 
 [blackfriday]

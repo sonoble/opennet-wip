@@ -1,7 +1,7 @@
 ---
 date: 2016-07-19T00:11:02+01:00
 title: Open Network Linux - Getting started
-weight: 10
+weight: 20
 ---
 Getting Started
 ------------------------------------------------
@@ -165,8 +165,8 @@ To persist and setup programs:
 
 2) Edit /mnt/onl/data/rc.boot and insert the necessary commands
 
-     # cat /mnt/onl/data/rc.boot
-     #!/bin/sh
-     dpkg -i /mnt/onl/data/package.deb
+     example: # cat /mnt/onl/data/rc.boot 
+              #!/bin/sh
+              dpkg -i /mnt/onl/data/package.deb
 
 3) reboot and confirm that commands are executing correctly:

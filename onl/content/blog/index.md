@@ -1,7 +1,7 @@
 ---
 date: 2016-06-08T21:07:13+01:00
 title: Open Network Linux Blog
-weight: 30
+weight: 50
 ---
 ## June 28th, 2016: 
 Added support for Accton AS5512 (Nephos/MediaTek switch), updated disk partitioning and started providing OpenNSL packages.
